@@ -50,6 +50,11 @@ class ChallengeCategories(Resource):
 ```json
 {"success": true, "data": ["pwn", "web"]}
 ```
+
+- Video hướng dẫn (Author: Frank0Li0)
+
+[![Video Demo](https://img.youtube.com/vi/1Wqgjok4i88/maxresdefault.jpg)](https://www.youtube.com/watch?v=1Wqgjok4i88)
+
 ## Cách sử dụng
 
 - Vào `theme` trong `admin-panel` chọn `pages` để sử dụng
