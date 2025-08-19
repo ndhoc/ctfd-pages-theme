@@ -1,6 +1,6 @@
 # ctfd-pages-theme
 
-- Repo gốc: https://github.com/frankli0324/ctfd-pages-them
+- Repo gốc: https://github.com/frankli0324/ctfd-pages-theme
 
 - English docs: [README_EN.md](./README_EN.md)
 
