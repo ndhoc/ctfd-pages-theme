@@ -57,7 +57,7 @@ class ChallengeCategories(Resource):
 
 ## Cách sử dụng
 
-- Vào `theme` trong `admin-panel` chọn `pages` để sử dụng.
-
-- Done!
+1. Vào `Admin Panel` > `Themes`
+2. Chọn `pages` theme
+3. Enjoy!
 
