@@ -6,31 +6,31 @@
 
 - Dùng để chia các challenges thành các ngăn được đặt menu bên trái, thay thế cho cách hiển thị các challenges ở cùng 1 trang như cách hiển thị ở theme core-beta.
 
-- Áp dụng khi có rất nhiều challenges
+- Áp dụng khi có rất nhiều challenges.
 
-- ảnh demo:
+- Ảnh demo:
   
   <img width="1659" height="867" alt="image" src="https://github.com/user-attachments/assets/d49550d2-ef9d-4b61-8aa5-c6c7048d154b" />
 
 
 ## Cách cài đặt
 
-- Yêu cầu đã cài đặt CTFd trước đó
+- Yêu cầu đã cài đặt CTFd trước đó.
 
 ```sh
 git clone https://github.com/CTFd/CTFd # Nếu đã cài đặt thì bỏ qua
 git clone https://github.com/ndhoc/ctfd-pages-theme CTFd/themes/pages
 ```
 
-- Truy cập vào `CTFd/CTFd/api/v1/challenges.py`
+- Truy cập vào `CTFd/CTFd/api/v1/challenges.py`.
 
-- Thêm import sau ở đầu file
+- Thêm import sau ở đầu file:
 
 ```py
 from CTFd.cache import cache
 ```
 
-- Sau đó thêm
+- Sau đó thêm:
 
 ```py
 @challenges_namespace.route("/categories")
@@ -45,7 +45,7 @@ class ChallengeCategories(Resource):
 ```
 
 
-- Kiểm tra `/api/v1/challenges/categories` đã trả về kết quả chưa
+- Kiểm tra `/api/v1/challenges/categories` đã trả về kết quả chưa.
 
 ```json
 {"success": true, "data": ["pwn", "web"]}
@@ -57,7 +57,7 @@ class ChallengeCategories(Resource):
 
 ## Cách sử dụng
 
-- Vào `theme` trong `admin-panel` chọn `pages` để sử dụng
+- Vào `theme` trong `admin-panel` chọn `pages` để sử dụng.
 
 - Done!
 
