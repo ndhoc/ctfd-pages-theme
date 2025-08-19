@@ -46,6 +46,12 @@ class ChallengeCategories(Resource):
         return {"success": True, "data": [i.category for i in chal_q]}
 ```
 
+- Build lại để cập nhật thay đổi:
+
+```sh
+docker compose build
+docker compose up -d
+```
 
 - Kiểm tra `/api/v1/challenges/categories` đã trả về kết quả chưa.
 
