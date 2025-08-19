@@ -2,7 +2,7 @@
 
 - Repo gốc: https://github.com/frankli0324/ctfd-pages-them
 
-## Tác dụng
+## Mô tả
 
 - Dùng để chia các challenges thành các ngăn được đặt menu bên trái, thay thế cho cách hiển thị các challenges ở cùng 1 trang như cách hiển thị ở theme core-beta.
 
@@ -49,6 +49,7 @@ class ChallengeCategories(Resource):
 ```json
 {"success": true, "data": ["pwn", "web"]}
 ```
+## Cách sử dụng
 
 - Vào `theme` trong `admin-panel` chọn `pages` để sử dụng
 
