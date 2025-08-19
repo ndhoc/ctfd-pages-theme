@@ -1,17 +1,56 @@
 # ctfd-pages-theme
 
-`core-beta` is forked from https://github.com/CTFd/core-beta
+- Repo gốc: https://github.com/frankli0324/ctfd-pages-them
 
-将题目分类分页，目前用于 https://ctf.xidian.edu.cn 以及 https://ctf.show
+## Tác dụng
 
-## 食用方式
+- Dùng để chia các challenges thành các ngăn được đặt menu bên trái, thay thế cho cách hiển thị các challenges ở cùng 1 trang như cách hiển thị ở theme core-beta.
 
-clone到themes目录下，在后台切换到相应主题。  
-请自行在CTFd中添加`/api/v1/challenges/categories`路由用于枚举题目类型
+- Áp dụng khi có rất nhiều challenges
 
-## tldr
+- ảnh demo:
+  <img width="1659" height="867" alt="image" src="https://github.com/user-attachments/assets/d49550d2-ef9d-4b61-8aa5-c6c7048d154b" />
+
+
+## Cách cài đặt
+
+- Yêu cầu đã cài đặt CTFd trước đó
 
 ```sh
-git clone https://github.com/CTFd/CTFd
-git clone https://github.com/frankli0324/ctfd-pages-theme CTFd/themes/pages
+git clone https://github.com/CTFd/CTFd # Nếu đã cài đặt thì bỏ qua
+git clone https://github.com/ndhoc/ctfd-pages-theme CTFd/themes/pages
 ```
+
+- Truy cập vào `CTFd/CTFd/api/v1/challenges.py`
+
+- Thêm import sau ở đầu file
+
+```py
+from CTFd.cache import cache
+```
+
+- Sau đó thêm
+
+```py
+@challenges_namespace.route("/categories")
+class ChallengeCategories(Resource):
+    @challenges_namespace.doc(description="Endpoint to get Challenge categories in bulk")
+    @cache.memoize(timeout=60)
+    def get(self):
+        chal_q = (Challenges.query.with_entities(Challenges.category).group_by(Challenges.category))
+        if not is_admin() or request.args.get("view") != "admin":
+            chal_q = chal_q.filter(and_(Challenges.state != "hidden", Challenges.state != "locked"))
+        return {"success": True, "data": [i.category for i in chal_q]}
+```
+
+
+- Kiểm tra `/api/v1/challenges/categories` đã trả về kết quả chưa
+
+```json
+{"success": true, "data": ["pwn", "web"]}
+```
+
+- Vào `theme` trong `admin-panel` chọn `pages` để sử dụng
+
+- Done!
+
