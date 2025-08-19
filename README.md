@@ -2,7 +2,7 @@
 
 - Repo gốc: https://github.com/frankli0324/ctfd-pages-theme
 
-- English docs: [README_EN.md](./README_EN.md)
+- English guide: [README_EN.md](./README_EN.md)
 
 ## Mô tả
 
