@@ -44,6 +44,12 @@ class ChallengeCategories(Resource):
         return {"success": True, "data": [i.category for i in chal_q]}
 ```
 
+- Rebuild to update changes:
+
+```sh
+docker compose build
+docker compose up -d
+```
 
 - Verify the endpoint /api/v1/challenges/categories returns expected results:
 
